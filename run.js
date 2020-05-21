@@ -16,4 +16,33 @@ function runSingleton() {
   console.log("instance1 == instance2 ? " + (instance1 === instance2));  
 }
 
-runSingleton();
+
+function runSingletonPractical() {
+ 
+  const instance = CacheManager.instance;
+
+  instance.add("key1", "value1");
+  instance.add("key2", "value2");
+  instance.add("key3", "value3");
+
+  const instance2 = CacheManager.instance;
+  console.log(instance.read("key2"), instance2.read("key2"));
+  console.log("Count: ", instance2.count);
+
+  instance.delete("key2");
+  console.log("Count: ", instance2.count);
+
+  // Test each method
+  instance.eachObject(item => console.log(item));
+  instance.values(value => console.log("value: ", value));
+  instance.keys(key => console.log("key: ", key));
+
+}
+
+
+// NOTE:  Uncomment the code to run respective examples
+// We will get better with this by creating a runner helper
+
+//runSingleton();
+
+runSingletonPractical();

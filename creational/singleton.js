@@ -9,6 +9,7 @@ class Singleton {
   }
 
   static get instance() {
+    //console.log("static: instance: ", this);
     if (!this[singleton]) {
       this[singleton] = new Singleton(singletonIdentifier);
     }
@@ -17,6 +18,7 @@ class Singleton {
   }
 
   singletonMethod() {
+    //console.log("singletonMethod: ", this);
     return 'singletonMethod';
   }
 
