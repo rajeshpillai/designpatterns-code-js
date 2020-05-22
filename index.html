@@ -4,12 +4,42 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Design Patterns</title>
+     <!-- add mocha css, to show results -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
     <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/4.2.0/chai.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/7.1.2/mocha.min.js"></script>
+
+    <script>
+      mocha.setup('bdd'); // minimal setup
+    </script>
+
+    <script>
+      // chai has a lot of stuff, let's make assert global
+      let assert = chai.assert;
+    </script>
+
   </head>
   <body>
 
+    <div id="mocha"></div>
+
+    
     <script src="./creational/singleton.js"></script>
-        <script src="./creational/singleton-practical.js"></script>
+    <script src="./creational/singleton-practical.js"></script>       
+
     <script src="./run.js"></script>
+
+    <script src="./tests/singleton_practical_test.js"></script>
+
+
+    
+    <!-- run tests! -->
+    <script>
+      mocha.run();
+    </script>
+    
+
   </body>
 </html>
