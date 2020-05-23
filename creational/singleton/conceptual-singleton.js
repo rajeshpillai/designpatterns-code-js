@@ -1,3 +1,4 @@
+
 const singleton = Symbol();
 const singletonIdentifier = Symbol();
 
